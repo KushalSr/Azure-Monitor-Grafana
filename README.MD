@@ -1,15 +1,18 @@
 # Project Structure
 
-├── main.tf                # Root module where you call the module and configure inputs
-├── variables.tf           #  Root module variables to define inputs for your resources
-├── provider.tf           #  Root module provider (Azurerm)
-├── azure_grafana_dashboard.tfvars       # Values for your variables, this is where you'll configure instances (grafana_instances)
-├── modules/
-│   └──
-│       ├── main.tf        # The actual module with resources like azurerm_dashboard_grafana, azurerm_monitor_workspace, etc.
-│       ├── variables.tf   # Module-specific variables
-│       ├── outputs.tf     # Optional: outputs if you want to get any resource details after creation
-└── terraform.tfstate      # Terraform state file that gets created during apply
+📂 terraform-grafana-monitor
+│── 📁 modules/                  # Reusable Terraform modules
+│    ├── 📄 main.tf               # Defines Azure resources (Grafana, Monitor, etc.)
+│    ├── 📄 variables.tf          # Module input variables
+│    ├── 📄 outputs.tf            # Module outputs
+│── 📄 main.tf                   # Calls the Grafana module
+│── 📄 variables.tf              # Defines project-wide variables
+│── 📄 provider.tf              # Define azure provider
+│── 📄 azure_grafana_dashboard.tfvars          # Stores user-defined values (Grafana instances, RGs, etc.)
+│── 📄 outputs.tf                # Outputs resource details
+│── 📄 .gitignore                # Prevents committing sensitive & temporary files
+│── 📄 README.md                 # Project documentation
+
 
 
 # Important Commands : 
