@@ -12,7 +12,7 @@ terraform.tfstate.*
 crash.log
 
 # Ignore Terraform variable files (can contain sensitive info)
-*.tfvars
+
 *.tfvars.json
 
 # Ignore Terraform plan output

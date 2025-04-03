@@ -3,5 +3,5 @@ output "grafana_id" {
 }
 
 output "monitor_workspace_id" {
-  value = azurerm_monitor_workspace.this.id
+  value = data.azurerm_monitor_workspace.this.id  # Use the data block reference for Monitor Workspace
 }
